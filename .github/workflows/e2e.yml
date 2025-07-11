@@ -73,8 +73,9 @@ jobs:
         shell: pwsh
         run: |
           New-Item -Path ${{ runner.temp }}/example -ItemType Directory
-          pnpm nuxt init ${{ runner.temp }}/example --packageManager pnpm --force --gitInit=false
+          pnpm nuxt init ${{ runner.temp }}/example --packageManager pnpm --force --gitInit=false --offline
           cd ${{ runner.temp }}/example
+          pnpm install
           pnpm dlx storybook@${{ env.STORYBOOK_VERSION }} init
           pnpm list --long
 
