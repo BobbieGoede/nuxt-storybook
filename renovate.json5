@@ -29,18 +29,11 @@
   ignorePaths: ['**/node_modules/**'],
   packageRules: [
     {
-      // Pin all @storybook/* packages because even minor updates can break things for us, but use different strategy for peer deps
+      // Pin all @storybook/* packages because even minor updates can break things for us
       matchPackagePatterns: ['storybook', '@storybook/*'],
-      matchDepTypes: ['dependencies', 'devDependencies'],
       groupName: 'storybook packages',
       groupSlug: 'storybook',
       rangeStrategy: 'pin',
-    },
-    {
-      // Use bump strategy for peer dependencies to maintain compatibility and desired version ranges
-      matchPackagePatterns: ['storybook', '@storybook/*'],
-      matchDepTypes: ['peerDependencies'],
-      rangeStrategy: 'bump',
     },
     {
       // Pin all dependencies (for docs and examples) following https://docs.renovatebot.com/dependency-pinning/

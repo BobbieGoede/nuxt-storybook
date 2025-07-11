@@ -10,7 +10,6 @@ describe('ssr', async () => {
   it('renders the index page', async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
-    console.log(html)
     expect(html).toContain('Welcome to Nuxt!')
   })
 })
