@@ -19,10 +19,10 @@ jobs:
         # os: [ubuntu-latest, windows-latest, macos-latest]
         node: [20]
         os: [ubuntu-latest]
-        include:
-          - node: 24
-            os: ubuntu-latest
-            release-nightly: true
+        # include:
+        #   - node: 24
+        #     os: ubuntu-latest
+        #     release-nightly: true
     permissions:
       contents: read
       id-token: write
