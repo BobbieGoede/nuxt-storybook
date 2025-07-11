@@ -11,7 +11,6 @@ describe('ssr', async () => {
   it('renders the index page', { timeout: 1200000 }, async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
-    console.log(html)
     expect(html).toContain('Add Storybook')
   })
 })
