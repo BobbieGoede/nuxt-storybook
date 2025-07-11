@@ -67,6 +67,13 @@
     "access": "public"
   },
   "pnpm": {
+    "overrides": {
+      "storybook": "~9.0.5",
+      "@storybook/vue3": "~9.0.5",
+      "@storybook/vue3-vite": "~9.0.5",
+      "@storybook/addon-links": "~9.0.5",
+      "@storybook/addon-docs": "~9.0.5"
+    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "webpack",
