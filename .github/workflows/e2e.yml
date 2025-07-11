@@ -77,5 +77,5 @@ jobs:
           pnpm list --long
 
       - name: Build Storybook
-        run: pnpm build-storybook
+        run: pnpm nuxt prepare && pnpm build-storybook
         working-directory: ${{ runner.temp }}/example
