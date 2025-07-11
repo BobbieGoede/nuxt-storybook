@@ -71,7 +71,12 @@
       "nuxt": "npm:nuxt-nightly@3x",
       "@nuxt/kit": "npm:@nuxt/kit-nightly@3x",
       "@nuxt/schema": "npm:@nuxt/schema-nightly@3x",
-      "@nuxt/vite-builder": "npm:@nuxt/vite-builder-nightly@3x"
+      "@nuxt/vite-builder": "npm:@nuxt/vite-builder-nightly@3x",
+      "@storybook/addon-docs": "^9.0.5",
+      "@storybook/addon-links": "^9.0.5",
+      "@storybook/builder-vite": "^9.0.5",
+      "@storybook/vue3": "^9.0.5",
+      "@storybook/vue3-vite": "^9.0.5"
     },
     "peerDependencyRules": {
       "ignoreMissing": [
