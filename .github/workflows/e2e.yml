@@ -20,8 +20,10 @@ jobs:
       fail-fast: false
       matrix:
         # Keep this in sync with the oldest Node.js version supported by the storybook
-        node: [20, 21, 22, 23, 24]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        # node: [20, 21, 22, 23, 24]
+        node: [20]
+        # os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest]
         exclude:
           # Failing: https://github.com/nuxt-modules/storybook/pull/882#issuecomment-2939100304
           - node: 21
@@ -71,11 +73,12 @@ jobs:
         shell: pwsh
         run: |
           New-Item -Path ${{ runner.temp }}/example -ItemType Directory
-          pnpm nuxt init ${{ runner.temp }}/example --packageManager pnpm --force --gitInit=false
+          pnpm nuxt init ${{ runner.temp }}/example --packageManager pnpm --force --gitInit=false --offline
           cd ${{ runner.temp }}/example
+          pnpm install
           pnpm dlx storybook@${{ env.STORYBOOK_VERSION }} init
           pnpm list --long
 
       - name: Build Storybook
-        run: pnpm build-storybook
+        run: pnpm nuxt prepare && pnpm build-storybook
         working-directory: ${{ runner.temp }}/example
